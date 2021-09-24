@@ -1,6 +1,15 @@
 function adicionarFilme(){
-  var campoFilmeFavorito = document.getElementById("filme").value;
-  var elementoFilmeFavorito = "<img src=" + campoFavorito + ">";
-  var listaFilmes = document.getElementById("listaFilmes");
-  elementoListaFilmes.innerHTML = elementoListaFilmes.innerHTML + elementoFilmeFavorito;
+  var filmeFavorito = document.getElementById("filme").value;
+  if(filmeFavorito.endsWith(".jpg")){
+	listarFilmesNaTela();  	
+  }else{
+  	console.error("Endereço de filme inválido");
+  }
+  document.getElementById("filme").value = "";
+}
+
+function listarFilmesNaTela(filme) {
+	var elementoFilmeFavorito = "<img src=" + campoFilmeFavorito + ">";
+	var elementoListaFilmes = document.getElementById("listaFilmes");
+	elementoListaFilmes.innerHTML = elementoListaFilmes.innerHTML + elementoFilmeFavorito;
 }
